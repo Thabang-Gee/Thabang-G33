@@ -1,0 +1,371 @@
+:root {
+  --primary-color: #00c2ff;
+  --accent-yellow: #ffcb00;
+  --dark-bg: #0d1b2a;
+  --light-bg: #f0f0f0;
+  --charcoal: #1a1a1a;
+  --light-text: #ffffff;
+  --dark-text: #000000;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(270deg, #b40000, #ff6347, #b40000);
+  background-size: 600% 600%;
+  animation: backgroundShift 20s ease infinite;
+  color: var(--light-text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: row;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes backgroundShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Header & Logo */
+header {
+  background-color: #b40000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header .official-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+header .official-logo img {
+  width: 80px;
+  height: auto;
+}
+
+/* Navigation / Sidebar */
+nav {
+  width: 250px;
+  height: 100vh;
+  background-color: var(--charcoal);
+  padding: 30px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+  scroll-behavior: smooth;
+}
+
+nav.show {
+  transform: translateX(0);
+}
+
+nav img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+nav a, nav ul li a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Mobile toggle */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 101;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main Content & Sections */
+main {
+  margin-left: 250px;
+  padding: 40px;
+  flex-grow: 1;
+}
+
+main section h2 {
+  color: #b40000;
+  margin-bottom: 15px;
+}
+
+section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  margin-bottom: 60px;
+}
+
+section.fade-in {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sidebar Images & Logo */
+#sidebar img {
+  border-radius: 75px;
+  border: 5px solid black;
+  box-shadow: 2px 2px 7px black;
+}
+
+img {
+  border-radius: 12px;
+  box-shadow: 2px 2px 7px black;
+}
+
+/* News Section */
+.news-section, #home .latest-news {
+  padding: 40px 20px;
+  background-color: #fffefc;
+}
+
+.news-section h2, #home .latest-news h2 {
+  color: #b40000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.news-grid, #home .latest-news .news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-item, #home .latest-news .news-item {
+  width: 300px;
+  background-color: #fff3f3;
+  border-left: 4px solid #b40000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.news-item img, #home .latest-news .news-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Team */
+.team-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.team-member img, .team-member-developer img, .team-member-strategy img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  padding: 5px;
+  box-shadow: 2px 2px 7px black;
+}
+
+.team-member-developer img {
+  background-color: rgb(0,102,255);
+}
+
+.team-member-strategy img {
+  background-color: white;
+}
+
+/* Fixtures */
+.fixtures {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.fixtures ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fixtures ul li {
+  margin: 10px 0;
+}
+
+/* About Section */
+.about-section {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-section h2, .about-section h3 {
+  color: #006400;
+  margin-bottom: 10px;
+}
+
+/* Contact */
+.contact, #contact {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact-form, #contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, .contact-form textarea, form input, form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.contact-form button, form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #b40000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #900000;
+}
+
+/* Footer */
+.footer-part, footer {
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #f7bebe;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Wave Background */
+.wave-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -5;
+  pointer-events: none;
+}
+
+.wave-background svg {
+  width: 100%;
+  height: 100%;
+  animation: waveFloat 20s ease-in-out infinite alternate;
+  fill: white;
+}
+
+@keyframes waveFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-15px) scale(1.05); }
+}
+
+/* Cricket ball animation */
+.cricket-ball {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, white 60%, red 100%);
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: -50px;
+  transform: translateY(-50%);
+  display: none;
+  z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav, nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .hero, .fixtures, .team-section, .contact {
+    padding: 20px 10px;
+  }
+
+  .team-videos video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  header .logo img {
+    width: 60px;
+  }
+}
