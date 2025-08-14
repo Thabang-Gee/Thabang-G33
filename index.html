@@ -4,252 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bushbuckridge Cricket Club | Official Website</title>
-  <meta name="description" content="Official website of Bushbuckridge Cricket Club. Get the latest news, fixtures, team info, and more from the heart of the Lowveld." />
-  <meta name="keywords" content="Bushbuckridge, Cricket Club, Lowveld, Fixtures, Team, News, Sports, South Africa" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-    section {
-      display: none;
-    }
-    section.active {
-      display: block;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-    }
-    .news-item {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    /* Mobile Navigation Styles */
-    .js-mobile-nav {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: #fff;
-      width: 100%;
-      padding: 10px 0;
-      z-index: 1000;
-    }
-    .js-mobile-nav.is-open {
-      display: block;
-    }
-    .js-dropdown-list {
-      display: none;
-      padding-left: 20px;
-    }
-    .js-dropdown-list.is-open {
-      display: block;
-    }
-    .js-mobile-nav-btn.is-active {
-      background: #ccc;
-    }
-    .no-scroll {
-      overflow: hidden;
-    }
-    nav ul, .js-mobile-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li, .js-mobile-nav ul li {
-      margin-bottom: 10px;
-    }
-    .js-dropdown-btn {
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-size: 1em;
-      padding: 0;
-    }
+    /* Include your provided CSS here or link to style.css */
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="official logo.jpg" alt="Bushbuckridge Cricket Club official logo" class="logo" />
-      <h1>Bushbuckridge Cricket Club</h1>
-    </div>
+  <!-- Mobile Toggle Button -->
+  <div class="mobile-menu-toggle">☰</div>
 
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-      <ul>
-        <li><a href="#" onclick="showSection('home')">Home</a></li>
-        <li><a href="#" onclick="showSection('team')">Team</a></li>
-        <li><a href="#" onclick="showSection('results')">Results</a></li>
-        <li><a href="#" onclick="showSection('news')">News</a></li>
-        <li><a href="#" onclick="showSection('about')">About</a></li>
-        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Sidebar / Navigation -->
+  <nav id="sidebar">
+    <img src="official logo.jpg" alt="BCC Logo">
+    <a href="#" data-section="home">Home</a>
+    <button class="js-dropdown-btn">Team ▼</button>
+    <ul class="js-dropdown-list" aria-expanded="false" aria-hidden="true">
+      <li><a href="#" data-section="team">Our Players</a></li>
+      <li><a href="#" data-section="results">Results</a></li>
+    </ul>
+    <a href="#" data-section="news">News</a>
+    <a href="#" data-section="about">About</a>
+    <a href="#" data-section="contact">Contact</a>
+  </nav>
 
-    <!-- Mobile Navigation -->
-    <div class="js-mobile-nav-container">
-      <button class="js-mobile-nav-btn">☰ Menu</button>
-      <nav class="js-mobile-nav">
-        <ul>
-          <li><a href="#" onclick="showSection('home')">Home</a></li>
-          <li>
-            <button class="js-dropdown-btn">Team ▼</button>
-            <ul class="js-dropdown-list" aria-expanded="false" aria-hidden="true">
-              <li><a href="#" onclick="showSection('team')">Our Players</a></li>
-              <li><a href="#" onclick="showSection('results')">Results</a></li>
-            </ul>
-          </li>
-          <li><a href="#" onclick="showSection('news')">News</a></li>
-          <li><a href="#" onclick="showSection('about')">About</a></li>
-          <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+  <!-- Main Content -->
   <main>
     <!-- Home Section -->
-    <section id="home" class="hero active">
+    <section id="home" class="fade-in">
       <h2>Welcome to Bushbuckridge Cricket Club</h2>
       <p>Representing the heart of the Lowveld with passion and pride.</p>
-      <div id="latest-news" class="latest-news">
-        <h2>Latest News</h2>
-        <div class="news-container">
-          <article class="news-item">
-            <img src="U12.jpg" alt="Match Result">
-            <h3>🏏 Bushbuckridge U/13 Win by 7 Wickets</h3>
-            <p><strong>Date:</strong> 14 August 2025</p>
-            <p>Bushbuckridge U/13 chased down 134 in 14.1 overs to beat White River by 7 wickets in the Ehlanzeni Primary School Cricket League.</p>
-            <a href="#" onclick="showSection('news')">Read More</a>
-          </article>
-          <article class="news-item">
-            <img src="t2.jpg" alt="News Image 1" />
-            <h3>🏏 League's Update</h3>
-            <p>Girls Under 19 will start their league on the 13th August. The following weekend will be our U15 and U19 boys.</p>
-            <a href="#" onclick="showSection('news')">Read More</a>
-          </article>
-          <article class="news-item">
-            <img src="young-team.jpg" alt="News Image 2" />
-            <h3>🏏 Game Announced</h3>
-            <p>Our Under 13 boys will travel to Barberton Laer skool on Thursday 31st for a league game.</p>
-            <a href="#" onclick="showSection('news')">Read More</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- News Section -->
-    <section id="news" class="news-section">
-      <h2>Latest News</h2>
-      <!-- Add all news articles here like before -->
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="team-section">
+    <section id="team">
       <h2>Meet Our Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="queen.jpg" alt="Queen Hlatshwayo" />
+      <div class="images-section">
+        <div class="team-member-developer">
+          <img src="queen.jpg" alt="Queen Hlatshwayo">
           <h3>Queen Hlatshwayo</h3>
-          <p>All-Rounder – Represented Mpumalanga Rhinos</p>
         </div>
-        <div class="team-member">
-          <img src="pic3.jpg" alt="Player 1" />
+        <div class="team-member-strategy">
+          <img src="pic3.jpg" alt="Player 1">
           <h3>Player One</h3>
-          <p>Team – Ladies Senior</p>
         </div>
-        <div class="team-member">
-          <img src="team1.jpg" alt="Player 2" />
+        <div class="team-member-strategy">
+          <img src="team1.jpg" alt="Player 2">
           <h3>Player Two</h3>
-          <p>Squad – Men's Team</p>
         </div>
       </div>
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="fixtures">
+    <section id="results">
       <h2>Match Results</h2>
-      <article class="news-item" style="background:#ffe6e6;">
-        <h3 style="color:#b30000;">🏏 Latest Match Result</h3>
-        <p><strong>Results to be sent in at the end of each league week by Friday 12:00</strong></p>
-      </article>
+      <p>Latest results will appear here.</p>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <h2>Latest News</h2>
+      <p>News articles will appear here.</p>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about">
       <h2>About Us</h2>
-      <p>We are a passionate cricket team based in Bushbuckridge, Mpumalanga, founded to unite local talent and promote sportsmanship.</p>
+      <p>We are a passionate cricket team based in Bushbuckridge, Mpumalanga.</p>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
       <h2>Contact Us</h2>
-      <div class="contact-details">
-        <p><strong>Email:</strong> bushbuckridgecricket@gmail.com</p>
-        <p><strong>Phone:</strong> +27 79 798 4487</p>
-        <p><strong>Address:</strong> Tamajane Sec School, Hazyview, South Africa</p>
-      </div>
-      <form action="#" method="post" class="contact-form">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer-part">
     <p>&copy; 2025 Bushbuckridge Cricket Club | All Rights Reserved</p>
-    <p>Follow us: <a href="https://www.facebook.com/profile.php?id=100070892319155" target="_blank">Facebook</a></p>
   </footer>
 
   <script>
     // Section switching
-    function showSection(id) {
-      const sections = document.querySelectorAll("main section");
-      sections.forEach(section => section.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-
-    // Mobile Navigation
-    class MobileNavigation {
-        constructor(container) {
-            this.container = container;
-            this.menuToggleButtons = container.querySelectorAll(".js-mobile-nav-btn");
-            this.list = container.querySelector(".js-mobile-nav");
-            this.dropDownButtons = container.querySelectorAll(".js-dropdown-btn");
-
-            this.container.addEventListener("click", (event) => this.handleClick(event));
+    const links = document.querySelectorAll('nav a, .js-dropdown-list a');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.dataset.section;
+        document.querySelectorAll('main section').forEach(sec => sec.classList.remove('fade-in'));
+        document.getElementById(sectionId).classList.add('fade-in');
+        if(window.innerWidth <= 768){
+          document.querySelector('nav').classList.remove('show');
         }
+      });
+    });
 
-        handleClick(event) {
-            if (event.target.classList.contains("js-mobile-nav-btn")) {
-                this.toggleMenu();
-            }
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('show');
+    });
 
-            if (event.target.classList.contains("js-dropdown-btn")) {
-                this.toggleDropdown(event.target.nextElementSibling);
-            }
-        }
-
-        toggleMenu() {
-            this.menuToggleButtons.forEach(btn => btn.classList.toggle("is-active"));
-            this.list.classList.toggle("is-open");
-            document.body.classList.toggle("no-scroll");
-        }
-
-        toggleDropdown(dropdown) {
-            dropdown.classList.toggle("is-open");
-            const expanded = dropdown.getAttribute("aria-expanded") === "true";
-            dropdown.setAttribute("aria-expanded", !expanded);
-            const hidden = dropdown.getAttribute("aria-hidden") === "true";
-            dropdown.setAttribute("aria-hidden", !hidden);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", ()
+    // Dropdown toggle
+    const dropdownBtns = document.querySelectorAll('.js-dropdown-btn');
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.classList.toggle('is-open');
+        const expanded = dropdown.getAttribute('aria-expanded') === 'true';
+        dropdown.setAttribute('aria-expanded', !expanded);
+        const hidden = dropdown.getAttribute('aria-hidden') === 'true';
+        dropdown.setAttribute('aria-hidden', !hidden);
+      });
+    });
+  </script>
+</body>
+</html>
